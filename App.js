@@ -35,10 +35,10 @@ export default class App extends React.Component {
     const water = `${this.state.water} cups`;
     return (
       <Container>
-        <Header style={styles.zIndexTop}>
+        <Header>
           <Text style={styles.headerTitle}>😎 Go To Beach and Stay Hydrate 😎</Text>
         </Header>
-        <Content style={styles.zIndexTop}>
+        <Content>
           <View style={styles.content}>
             <Text style={styles.date}>{date}</Text>
             <Text style={styles.cupText}>{water}</Text>
@@ -57,7 +57,7 @@ export default class App extends React.Component {
         <Fab
           active={this.state.active}
           direction="right"
-          style={{ backgroundColor: '#00b2f9'}}
+          style={styles.fabStyle}
           position="bottomLeft"
           onPress={() => this.setWater()}
           onLongPress={() => this.setWater(true)}
@@ -74,11 +74,9 @@ const styles = {
     flex: 1, 
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 1000,
   },
   headerTitle: {
     paddingTop: 10,
-    zIndex: 1000,
   },
   date: {
     fontSize: 20,
@@ -93,5 +91,9 @@ const styles = {
   },
   zIndexTop: {
     zIndex: 1000,
+  },
+  fabStyle: {
+    backgroundColor: '#00b2f9',
+    zIndex: 1000, 
   }
 };
